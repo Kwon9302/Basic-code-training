@@ -1,6 +1,2 @@
 def solution(strArr):
-    answer = []
-    for i in strArr:
-        if not 'ad' in i:
-            answer.append(i)   
-    return answer
+    return [word for word in strArr if 'ad' not in word]
