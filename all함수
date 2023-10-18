@@ -1,0 +1,19 @@
+def solution(babbling):
+   
+    says = ["aya", "ye", "woo", "ma"]
+    result = 0
+   
+    for i in range(len(babbling)):
+    # babbling의 값을 변경해야 하므로 range(len(babbling)) 사용
+         
+        for say in says:
+            if say in babbling[i]:
+            # babbling[i] 안에 says가 있으면 "*"로 변경
+            # 예) "ayamwoo" => "*m*"
+                babbling[i] = babbling[i].replace(say, "*")
+       
+        if all(char == "*" for char in babbling[i]):
+            # babbling[i] 가 "*"로만 이루어져 있을시 result += 1
+            result += 1
+   
+    return result
