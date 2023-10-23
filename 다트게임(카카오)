@@ -1,0 +1,21 @@
+def solution(dartResult):
+    dart={
+        "S": 1,
+        "D": 2,
+        "T": 3,
+    }
+    answer=[]
+    score=''
+    for i in dartResult:
+        if i.isdigit():
+            score+=i
+        elif i in dart:
+            answer.append(int(score)**dart[i])
+            score=''
+        elif i in '*':
+            answer[-1] *= 2
+            if len(answer) >= 2:
+                answer[-2] *= 2
+        elif i in '#':
+            answer[-1]*=-1
+    return sum(answer)
