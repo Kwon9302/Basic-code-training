@@ -1,0 +1,26 @@
+import random
+w = ['pie','apple','strawberry']
+aw = random.choice(w)
+re = '_' * len(aw)
+print(re)
+while '_' in re:
+    a= input('알파벳을 입력해주세요 :')
+    if a in aw:
+        l = aw.index(a)
+        re_list = list(re)
+        re_list[l] = a
+        re= ''.join(re_list)
+        if aw.count(a) > 1:
+            n=0
+            for i in aw:
+                if i == a:
+                    re_list = list(re)
+                    re_list[n]=a
+                    re = ''.join(re_list)
+                n+=1               
+        print('Correct')
+        print(re)
+    else:
+        print('Wrong')
+print('Success')
+    
