@@ -1,8 +1,3 @@
-def solution(s):
-    if len(s) == 4 or len(s) == 6:
-        try:
-            int(s)
-            return True
-        except:
-            return False
-    return False
+def alpha_string46(s):
+    import re
+    return bool(re.match("^(\d{4}|\d{6})$", s))
