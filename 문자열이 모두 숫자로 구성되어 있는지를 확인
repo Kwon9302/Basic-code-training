@@ -1,3 +1,3 @@
 def alpha_string46(s):
-    import re
-    return bool(re.match("^(\d{4}|\d{6})$", s))
+    #함수를 완성하세요
+    return s.isdigit() and len(s) in [4,6]
