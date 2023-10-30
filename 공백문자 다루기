@@ -1,0 +1,21 @@
+def solution(s):
+   
+    #공백문자가 연속해서 나올 수 있다는거에 주의하자!!!
+   
+    # 참고 # "1qWe    eE ff"를 split(" ") 하면 ['1qWe', '', '', '', 'eE', 'ff']이렇게 된다
+    # 빈문자열도 사용해야하니 for문 돌릴 때 추가해야함!!!
+    words = s.split(" ")
+    result = []
+   
+    for char in words:
+       
+        # 공백문자가 아닐경우 result에  "첫문자는 대문자 + 뒤의 문자는 소문자" 추가하기
+        if char != "":
+            result.append(char[0].upper() + char[1:].lower())
+       
+        # 공백문자일경우 result에 "" 추가하기 !!!
+        else:
+            result.append("")
+   
+    # list 문자열로 바꾸기
+    return " ".join(result)
