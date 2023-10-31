@@ -1,0 +1,13 @@
+def solution(babbling):
+    joca=["aya", "ye", "woo", "ma"]
+    for j in range(len(babbling)):
+        for n,m in enumerate(joca):
+            if m in babbling[j]:
+                babbling[j]=babbling[j].replace(m,str(n))
+                if str(n)+str(n) in babbling[j]:
+                    babbling[j]='X'
+    answer=0
+    for i in babbling:
+        if i.isdigit():
+            answer+=1
+    return answer
